@@ -1,0 +1,303 @@
+/* CSS used here will be applied after bootstrap.css */
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Source Sans Pro';
+    background-color: rgba(239, 240, 241, 0.5);
+}
+.header {
+    background-size: cover;
+    background: linear-gradient(0deg, rgba(129, 129, 133, 0.07) 70%, rgba(129, 129, 133, 0.6) 100%);
+    background-color: #FFFFFF;
+    z-index: -2;
+    padding-bottom: 30px;
+    padding-top: 70px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+}
+.navbar-expand-lg {
+    background-color: white;
+    color: #f47a20;
+    box-shadow: 0px 2px #e25a02;
+
+}
+
+.nav-link {
+    color: #000000;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+
+
+.content-title {
+    color: #000000;
+    background-color: white;
+    border: 2px solid #f47a20;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.navbar-brand {
+    color: #000000;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+.img-thumbnail {
+    margin: 5px;
+    border-color: #818185;
+    border-width: 1px;
+    z-index: 1;
+}
+.user-profile {
+    background-color: rgb(246, 138, 31);
+    color: #ffffff;
+    text-shadow: 0.5px 0.5px #818185;
+    border-color: #818185;
+    border-width: 1px;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    z-index: 0;
+}
+.user-profile h1 {
+    font-size: 3rem;
+}
+
+.user-profile hr {
+    background-color: #FFFFFF;
+    width: 90%;
+    border-radius: 5px;
+    height: 0.5px;
+}
+
+.user-profile a {
+    color: #FFFFFF;
+}
+
+.badge,.badge-tag {
+    transition: background-color .15s ease-in-out,border .15s ease-in-out,color .15s ease-in-out;
+    padding: .4em .8em .4em .4em;
+    margin: 0 3px 3px 0;
+    color: #000000;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 12px;
+    background-color: #2f3337;
+    border: 1px solid transparent;
+    display: inline-block;
+    border-radius: 4px
+}
+
+.badge:hover,.badge-tag:hover {
+    color: #FFF;
+    text-decoration: none;
+    background-color: #0C0D0E
+}
+
+.badge-tag {
+    color: #535a60;
+    background-color: #eff0f1;
+    border-color: #f47a20
+}
+
+.badge-tag:hover {
+    color: #474d53;
+    background-color: #d6d9dc;
+    border-color: #c8ccd0
+}
+
+.badgecount {
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 2px;
+    color: #848d95
+}
+
+.badge1,.badge2,.badge3 {
+    display: inline-block;
+    overflow: hidden;
+    line-height: inherit;
+    vertical-align: text-bottom;
+    width: 14px;
+    height: 14px
+}
+
+.badge1 {
+    background-position: -97px -398px
+}
+
+.badge2 {
+    background-position: -77px -398px
+}
+
+.badge3 {
+    background-position: -57px -398px
+}
+
+.badge1-alternate,.badge2-alternate,.badge3-alternate,.badge-how-to {
+    padding: 4px 8px;
+    border: 1px solid transparent;
+    border-radius: 2px
+}
+
+.badge1-alternate .-total,.badge2-alternate .-total,.badge3-alternate .-total,.badge-how-to .-total {
+    font-weight: 700;
+    color: #535a60
+}
+
+.badge1-alternate {
+    background-color: #fff8e2;
+    border-color: #ece3c8
+}
+
+.badge2-alternate,.badge-how-to {
+    background-color: #edeeef;
+    border-color: #e0e1e3
+}
+
+.badge3-alternate {
+    background-color: #f9ebe1;
+    border-color: #f1decc
+}
+
+a.badge1-alternate:hover,a.badge2-alternate:hover,a.badge3-alternate:hover {
+    background-color: #535a60;
+    border-color: transparent
+}
+.dot {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-gold {
+    background-color: #fcc216;
+}
+.dot-silver{
+    background-color: #b4b8bc;
+}
+.dot-bronze{
+    background-color: #d1a684;
+}
+
+/*@media (min-width: 992px) {*/
+/*body {*/
+/*padding-top: 56px;*/
+/*}*/
+/*}*/
+
+.portfolio-card {
+    border-width: 2px;
+    border-color: #f47a20;
+    z-index: 2;
+    border-radius: 10px;
+}
+.portfolio-item {
+    margin-bottom: 30px;
+}
+
+.portfolio-item a{
+    color: #000000;
+}
+
+.separator hr{
+   color: #f47a20;
+    width: 100%;
+}
+.card-title{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.card-footer {
+    border-color: #f47a20;
+}
+
+/*.card {*/
+    /*background-color: rgb(244, 122, 32);*/
+    /*border-color: #FFFFFF;*/
+    /*border-width: 1px;*/
+    /*border-radius: 10px;*/
+/*}*/
+.pagination {
+    margin-bottom: 30px;
+}
+
+.content {
+    color: #FFFFFF;
+    background-size: cover;
+    background-color: rgba(239, 240, 241, 0.5);
+    /*background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/orange-abs-waves.jpg");*/
+}
+
+.selected-question {
+    padding-top: 80px;
+}
+.content h1{
+    padding-bottom: 30px;
+    padding-top: 30px;
+    z-index: 1;
+}
+
+.content-header hr{
+    border: 1px solid #f47a20;
+    background-color: #f47a20;
+    height: 1px;
+    width: 60%;
+    border-radius: 100%;
+}
+
+.content-header {
+    padding-bottom: 30px;
+}
+
+.div-inline {
+    display: inline-block;
+}
+
+.div-inline #dropdown{
+    padding-left: 50px;
+}
+
+.card-footer {
+    background-color: rgba(129, 129, 133, 0.03) !important;
+}
+.portofolio {
+    padding-top: 30px;
+}
+
+.btn-primary {
+  background-color: #ffffff !important;
+  border-color: #e25a02 !important;
+  color: #e25a02 !important;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  background-color: #e25a02 !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+.btn-secondary {
+  background-color: #f47a20 !important;
+  border-color: #e25a02 !important;
+  color: #ffffff !important;
+}
+
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {
+  background-color: #e25a02 !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+}

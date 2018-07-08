@@ -1,0 +1,114 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Stackoverflow recommender</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+
+    <!-- Custom Fonts -->
+    <link href={% static "login-page/vendor/font-awesome/css/font-awesome.min.css" %} rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href={% static "login-page/vendor/simple-line-icons/css/simple-line-icons.css" %} rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'profile/css/profile.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/profile?userName={{ user.displayName }}">Profile</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav nav-pills nav-fill ml-auto orange">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/recommendations?userId={{ user.id }}&model=BPR">BPR Recommendations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/recommendations?userId={{ user.id }}&model=ALS">ALS Recommendations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid content selected-question">
+    <div class="row justify-content-md-center">
+        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+            <div class="card h-100 portfolio-card">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="{{ question.0.link }}" target="_blank">{{ question.0.title|safe }}</a>
+                    </h4>
+                </div>
+                <div class="card-footer">
+                    {% for tag in question.0.tags %}
+                        <span class="badge badge-tag"> {{ tag }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-12 content-header justify-content-md-center">
+            <div class="col-12 content-title">
+                <h2 class="div-inline">Similar questions</h2>
+                <div class="dropdown" id="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Top {{ top }} Questions
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="/similarQuestions?questionId={{ question.0.id }}&userId={{ user.id }}&top=5">Top 5 Questions</a>
+                        <a class="dropdown-item" href="/similarQuestions?questionId={{ question.0.id }}&userId={{ user.id }}&top=10">Top 10 Questions</a>
+                        <a class="dropdown-item" href="/similarQuestions?questionId={{ question.0.id }}&userId={{ user.id }}&top=15">Top 15 Questions</a>
+                    </div>
+                </div><br>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        {% for question in similarQuestions %}
+            {#            {% if forloop.counter0|divisibleby:4 %}#}
+            {#                </div><div class="row">#}
+            {#            {% endif %}#}
+            <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+                <div class="card h-100 portfolio-card">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="{{ question.link }}" target="_blank">{{ question.title|safe }}</a>
+                        </h4>
+                    </div>
+                    <div class="card-footer">
+                        {% for tag in question.tags %}
+                            <span class="badge badge-tag"> {{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+
+</html>
